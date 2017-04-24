@@ -1,0 +1,38 @@
+{
+  "name": "webonaute/symfony-profiler-matcher",
+  "description": "Allow desable profiler on choosen routes with annotation.",
+  "type": "symfony-bundle",
+  "keywords": [
+    "development",
+    "database",
+    "annotation",
+    "symfony",
+    "symfony2",
+    "profiler",
+    "matcher"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mathieu Delisle",
+      "email": "mdelisle@webonaute.ca"
+    }
+  ],
+  "support": {
+    "email": "mdelisle@webonaute.ca",
+    "issue": "https://github.com/Webonaute/SymfonyProfilerMatcher/issues",
+    "source": "https://github.com/Webonaute/SymfonyProfilerMatcher"
+  },
+  "require": {
+    "php": ">=5.3",
+    "symfony/framework-bundle": ">=2.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0",
+    "symfony/phpunit-bridge": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {"Webonaute\\SymfonyProfilerMatcher": ""}
+  },
+  "target-dir": "Webonaute/SymfonyProfilerMatcher"
+}

@@ -1,0 +1,5 @@
+services:
+    webonaute.profiler.request.matcher:
+        class: Webonaute\SymfonyProfilerMatcherBundle\Profiler\Matcher\RequestMatcher
+        arguments: ['@router']
+        public: false
