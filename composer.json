@@ -32,7 +32,7 @@
     "symfony/phpunit-bridge": "dev-master"
   },
   "autoload": {
-    "psr-0": {"Webonaute\\SymfonyProfilerMatcher": ""}
+    "psr-0": {"Webonaute\\SymfonyProfilerMatcherBundle": ""}
   },
-  "target-dir": "Webonaute/SymfonyProfilerMatcher"
+  "target-dir": "Webonaute/SymfonyProfilerMatcherBundle"
 }
