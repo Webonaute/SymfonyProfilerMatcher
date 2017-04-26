@@ -1,4 +1,6 @@
 # SymfonyProfilerMatcher
+
+## Simple setup
 Allow to easily desable profiler by adding annotation to your controller.
 
 Install the bundle :
@@ -65,3 +67,26 @@ framework:
         matcher:
             service: webonaute.profiler.request.matcher
 ```
+
+## Setup with cache.
+
+We support Redis/Predis caching using SNC Redis bundle.
+
+Simply add a service to inject the cache object.
+```
+services:
+    webonaute.profiler.request.matcher.cache:
+        class: Webonaute\SymfonyProfilerMatcherBundle\Profiler\Matcher\RequestMatcher
+        arguments: ['@router', "@snc_redis.default"]
+        public: false
+```
+Change @snc_redis.default for whatever configuration your use.
+
+Than set the framework profiler matcher to the new service.
+```
+framework:
+    profiler:
+        matcher:
+            service: webonaute.profiler.request.matcher.cache
+```
+           
