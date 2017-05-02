@@ -43,7 +43,6 @@ class RequestMatcher implements RequestMatcherInterface
 
     public function matches(Request $request)
     {
-        $reader = new AnnotationReader();
         $route = $this->router->matchRequest($request);
         $routeName = $route['_route'];
 
@@ -55,6 +54,7 @@ class RequestMatcher implements RequestMatcherInterface
             list ($controller, $method) = explode("::", $route['_controller']);
             $methodReflection = new \ReflectionMethod($controller, $method);
 
+            $reader = new AnnotationReader();
             /** @var Profiler $classAnnotation */
             $classAnnotation = $reader->getMethodAnnotation(
                 $methodReflection, 'Webonaute\SymfonyProfilerMatcherBundle\Annotation\Profiler'
