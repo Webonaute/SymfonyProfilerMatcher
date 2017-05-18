@@ -51,6 +51,12 @@ class RequestMatcher implements RequestMatcherInterface
             return $cache;
         } else {
             $ret = true;
+
+            if (strpos($route['_controller'], "::") === false){
+                //ignore this case.
+                return $ret;
+            }
+
             list ($controller, $method) = explode("::", $route['_controller']);
             $methodReflection = new \ReflectionMethod($controller, $method);
 
