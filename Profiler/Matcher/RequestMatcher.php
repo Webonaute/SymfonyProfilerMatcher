@@ -43,8 +43,15 @@ class RequestMatcher implements RequestMatcherInterface
 
     public function matches(Request $request)
     {
-        $route = $this->router->matchRequest($request);
-        $routeName = $route['_route'];
+        // If we already have _controller attribute in request, there is no need to match it with router.
+        // This is most probably sub-request and it may not even have route to match
+        if ($request->attributes->get('_controller')) {
+            $route['_controller'] = $request->attributes->get('_controller');
+            $routeName = $request->attributes->get('_controller');
+        } else {
+            $route = $this->router->matchRequest($request);
+            $routeName = $route['_route'];
+        }
 
         $cache = $this->getCache($routeName);
         if (is_bool($cache)) {
