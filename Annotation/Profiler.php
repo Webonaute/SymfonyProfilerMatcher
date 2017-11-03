@@ -8,7 +8,7 @@ namespace Webonaute\SymfonyProfilerMatcherBundle\Annotation;
  */
 final class Profiler
 {
-    public $desable = false;
+    public $disable = false;
 
     /**
      * Constructor.
