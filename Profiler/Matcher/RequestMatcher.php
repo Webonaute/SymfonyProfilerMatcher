@@ -73,7 +73,7 @@ class RequestMatcher implements RequestMatcherInterface
                 $methodReflection, 'Webonaute\SymfonyProfilerMatcherBundle\Annotation\Profiler'
             );
 
-            if ($classAnnotation !== null and $classAnnotation->desable == true) {
+            if ($classAnnotation !== null and $classAnnotation->disable == true) {
                 //desable profiling on this request.
                 $ret = false;
             }
